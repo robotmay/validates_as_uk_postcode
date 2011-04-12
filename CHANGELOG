@@ -1,3 +1,8 @@
+2.0 2011-04-12
+
+  * Major Refactoring to support Rails 2.x.x and Rails 3.x.x
+  * Package as a RubyGem for distribution
+
 1.0 2009-03-17
 
   * Updated to Creative Commons Attribution-Share Alike 3.0 Unported License.
