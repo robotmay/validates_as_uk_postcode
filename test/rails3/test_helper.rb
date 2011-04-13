@@ -13,8 +13,12 @@ ActiveRecord::Base.establish_connection(
   "database" => ":memory:"
 )
 
-require File.join(File.dirname(__FILE__), '..', '..', 'lib', 'rails3.rb')
+module Rails
+  module VERSION
+    MAJOR = 3
+  end
+end
 
-ActiveRecord::Base.send(:include,  ValidatesAsUKPostcode::Rails3)
+require File.join(File.dirname(__FILE__), '..', '..', 'lib', 'validates_as_uk_postcode.rb')
 
 autoload :AbstractModel, File.join(File.dirname(__FILE__), 'models', 'abstract_model.rb')

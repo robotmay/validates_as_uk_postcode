@@ -1,6 +1,6 @@
 require 'rubygems'
 
-gem 'rails', '2.3.8'
+gem 'rails', '2.3.11'
 
 require 'sqlite3'
 require 'test/unit'
@@ -13,7 +13,13 @@ ActiveRecord::Base.establish_connection(
   "database" => ":memory:"
 )
 
-require File.join(File.dirname(__FILE__), '..', '..', 'lib', 'rails2.rb')
+module Rails
+  module VERSION
+    MAJOR = 2
+  end
+end
+
+require File.join(File.dirname(__FILE__), '..', '..', 'lib', 'validates_as_uk_postcode.rb')
 
 ActiveRecord::Base.send(:extend,  ValidatesAsUKPostcode::Rails2)
 
