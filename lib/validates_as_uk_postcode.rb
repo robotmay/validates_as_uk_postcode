@@ -10,8 +10,8 @@ module ValidatesAsUKPostcode
         :bfpo                => '^(bfpo)([0-9]{1,4})$',
         :bfpo_co             => '^(bfpo)(c\/o[0-9]{1,3})$'
       }
-      
-      pattern = /#{patterns.collect{|k,v| v}.join "|"}/i
+      values = patterns.collect{|k,v| v}
+      pattern = /#{values.join "|"}/i
     end
   end
 end
