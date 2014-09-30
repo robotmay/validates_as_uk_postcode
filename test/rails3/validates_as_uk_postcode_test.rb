@@ -39,6 +39,8 @@ class ValidatesAsUkPostcodeTest < Test::Unit::TestCase
       'EC1O 1BB', 'EC1Q 1BB', 'EC1S 1BB', 'EC1T 1BB', 'EC1U 1BB', 'EC1Z 1BB', 'EC1A 1IB',
       'EC1A 1MB', 'EC1A 1OB', 'EC1A 1VB', 'EC1A 1BC', 'EC1A 1BI', 'EC1A 1BK', 'EC1A 1BM',
       'EC1A 1BO', 'EC1A 1BV',
+      
+      'BFPO 2789', 'BFPO c/o 2345'
       ]
     postcodes.each do |postcode|
       assert !AbstractModel.new(:postcode => postcode).valid?, "#{postcode} should be illegal."
@@ -58,6 +60,8 @@ class ValidatesAsUkPostcodeTest < Test::Unit::TestCase
       'EC1A 1BB',
       'BT9 7JL',
       'GIR 0AA',
+      'BFPO 772',
+      'BFPO c/o 63'
       ]
     postcodes.each do |postcode|
       assert AbstractModel.new(:postcode => postcode).valid?, "#{postcode} should be legal."
